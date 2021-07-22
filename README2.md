@@ -20,6 +20,12 @@ Code is base on:
 * https://github.com/juntang-zhuang/Adabelief-Optimizer
 * https://github.com/Luolc/AdaBound
 
+Summaries of our experiments
+
+<center class="half">
+    <img src="results/table1.png" width="100%"/>
+</center>
+
 #### CIFAR10 and CIFAR100
 
 * Experiment is base on torch1.6.0
