@@ -6,9 +6,9 @@
 
 ## Algorithm
 
-<center class="half">
+<figure class="half">
     <img src="results/adam.png" width="50%"/><img src="results/AdaDiff.png" width="50%"/>
-</center>
+</figure>
 
 * In this section, we introduce our method, called AdaDiff, which is a new variant of Adam. The Pseudo codes of  Adam and AdaDiff are provided in algorithm 1 and algorithm 2 respectively. We can see that the biggest difference is the computing of <img src="https://render.githubusercontent.com/render/math?math=\v_t">. In Adam, the <img src="https://render.githubusercontent.com/render/math?math=\v_t"> is equaling to the EMA of <img src="https://render.githubusercontent.com/render/math?math=\g_t^2"> ; In AdaDiff, the <img src="https://render.githubusercontent.com/render/math?math=\v_t"> is equaling to the EMA of <img src="https://render.githubusercontent.com/render/math?math=\g_t^2-g_{t-1}^2"> . We believe the introduction of <img src="https://render.githubusercontent.com/render/math?math=\g_t^2-g_{t-1}^2"> can make the training of neural networks more stable. Intuitively, when the gradients change a lot, AdaDiff adopts a small step size compared to Adam. In addition, AdaDiff changes the position of <img src="https://render.githubusercontent.com/render/math?math=\epsilon"> according to the suggestion of  AdaBelief. The aim is to employ a low bound on learning rates. In fact, AdaDiff can be roughly regarded as SGD with the learning rate equaling to <img src="https://render.githubusercontent.com/render/math?math=\alpha/\sqrt{EMA(\epsilon)}"> when the gradients become very small during the last stages of the training of networks. 
 
